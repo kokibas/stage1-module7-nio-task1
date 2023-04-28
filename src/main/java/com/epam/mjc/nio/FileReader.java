@@ -2,11 +2,9 @@ package com.epam.mjc.nio;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +23,7 @@ public class FileReader {
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             list = Files.readAllLines(path);
             for (String s : list) {
-                String parts[] = s.split(":");
+                String [] parts = s.split(":");
                 if (parts.length == 2) {
                     String key = parts[0].trim();
                     String value = parts[1].trim();
